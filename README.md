@@ -34,3 +34,9 @@ PostgreSQL se lance depuis la racine avec `docker compose up -d db`.
 - pas moyen d'en supprimer un
 - pas d'inscription/connexion
 - les tests sont juste des todo pour l'instant, rien n'est vraiment testé
+
+## Authentification
+
+Pas d'authentification réelle : l'en-tête `X-User` tient lieu d'identité.
+
+Pourquoi : cette séance porte sur les tests et le versionnement, pas sur la sécurité. L'en-tête suffit à donner à `/watchlist` un cas de refus (401) à tester. À ne jamais utiliser en production, car n'importe qui peut se faire passer pour n'importe quel utilisateur.
