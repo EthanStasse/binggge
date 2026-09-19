@@ -82,7 +82,7 @@ app.get('/watchlist', user, async (req, res) => {
 
 app.post('/watchlist', user, async (req, res) => {
   const { show_id, title } = req.body || {};
-  if (!show_id || !title) {
+  if (!show_id || typeof title !== 'string' || !title.trim()) {
     return res.status(400).json({ error: 'show_id et title requis' });
   }
 

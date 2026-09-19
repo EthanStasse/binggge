@@ -44,3 +44,13 @@ test('/watchlist sans en-tête renvoie 401', async () => {
   const r = await request(app).get('/watchlist');
   assert.equal(r.status, 401);
 });
+
+test('ajouter une série avec un titre vide ou blanc renvoie 400', async () => {
+  for (const title of ['', '   ']) {
+    const r = await request(app)
+      .post('/watchlist')
+      .set('X-User', login)
+      .send({ show_id: 1, title });
+    assert.equal(r.status, 400, `le titre ${JSON.stringify(title)} devrait être refusé`);
+  }
+});
