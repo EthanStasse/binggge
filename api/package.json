@@ -1,0 +1,14 @@
+{
+  "name": "binggge-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API de la watchlist Binggge",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  }
+}

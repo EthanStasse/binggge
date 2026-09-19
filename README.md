@@ -2,10 +2,24 @@
 
 Petite API pour ma watchlist de séries. Je cherche un show sur TVMaze, je le garde dans une liste.
 
+## Structure
+
+```text
+.
+├── api/
+│   ├── package.json
+│   └── server.js
+├── docker-compose.yml
+└── README.md
+```
+
 ## Démarrage
 
+cd api
 npm install
-node server.js
+npm start
+
+PostgreSQL se lance depuis la racine avec `docker compose up -d db`.
 
 ## Ce qui marche déjà
 
